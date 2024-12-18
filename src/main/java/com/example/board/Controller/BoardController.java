@@ -90,7 +90,7 @@ public class BoardController {
 
     // 목록에서 삭제버튼을 클릭했을 때 삭제 처리
     // @GetMapping("/delete/{id}") = rest 방식
-    @PostMapping("/delete")
+    @GetMapping("/delete")
     public String deleteProc(Integer id) {
         log.info("삭제 처리...");
         boardService.delete(id);

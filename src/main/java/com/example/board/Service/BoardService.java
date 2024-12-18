@@ -60,7 +60,14 @@ public class BoardService {
     }
 
     public BoardDTO read(Integer id) {              // 상세보기, 개별정보, 게시글번호의 데이터를 화면에 출력
-        return null;
+        Optional<BoardEntity> boardEntity = boardRepository.findById(id);
+
+        BoardDTO boardDTO = modelMapper.map(boardEntity, BoardDTO.class);
+        return boardDTO;
     }
+
+    //접근자 전달자 메소드명(인수,...)
+    //전달자: 메소드에서 처리된 결과값을 전달
+    //인수 : 메소드에서 처리를 위한 값을 전달
 
 }
